@@ -4,5 +4,5 @@ themes:
 %_theme.zip: %_theme
 	zip -j $@ $^/*
 
-%.upload:
+%.upload: themes
 	for i in *.zip; do github-release upload -u magarena -r magarena-themes --name $$i --tag $* --file $$i; done
